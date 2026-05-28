@@ -1,5 +1,12 @@
 import Image from 'next/image';
-import { BRAND_ALT, LOGO_HEADER, LOGO_HEADER_HEIGHT, LOGO_HEADER_WIDTH, PRODUCT_NAME } from '@/lib/brand';
+import {
+  BRAND_ALT,
+  LOGO_HEADER,
+  LOGO_HEADER_HEIGHT,
+  LOGO_HEADER_WIDTH,
+  PRODUCT_NAME,
+  PRODUCT_TAGLINE_CLASS,
+} from '@/lib/brand';
 import { cn } from '@/lib/utils';
 
 interface BrandMarkProps {
@@ -10,12 +17,12 @@ interface BrandMarkProps {
 
 export function BrandMark({ size = 'md', showText = true, className }: BrandMarkProps) {
   const sizeMap = {
-    sm: { logo: 'h-[28px] w-auto', subtitle: 'text-[10px] mt-1' },
-    md: { logo: 'h-[47px] w-auto', subtitle: 'text-[10px] mt-1' },
-    lg: { logo: 'h-[44px] w-auto', subtitle: 'text-[10px] mt-1' },
-    xl: { logo: 'h-[56px] w-auto', subtitle: 'text-[20px] mt-2' },
+    sm: { logo: 'h-[28px] w-auto' },
+    md: { logo: 'h-[47px] w-auto' },
+    lg: { logo: 'h-[44px] w-auto' },
+    xl: { logo: 'h-[56px] w-auto' },
   };
-  const { logo, subtitle } = sizeMap[size];
+  const { logo } = sizeMap[size];
 
   return (
     <div className={cn('flex w-full flex-col items-start leading-none', className)}>
@@ -27,9 +34,7 @@ export function BrandMark({ size = 'md', showText = true, className }: BrandMark
         className={cn('object-contain object-left', logo)}
       />
       {showText && (
-        <span className={cn('w-full text-champagne-deep tracking-[0.06em] font-medium text-center', subtitle)}>
-          {PRODUCT_NAME}
-        </span>
+        <span className={PRODUCT_TAGLINE_CLASS}>{PRODUCT_NAME}</span>
       )}
     </div>
   );

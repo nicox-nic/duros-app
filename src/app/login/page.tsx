@@ -10,7 +10,14 @@ import { FieldLabel, TextInput } from '@/components/Form';
 import { LoginSplash, SPLASH_SEEN_SESSION_KEY } from '@/components/LoginSplash';
 import { WorkspaceInitOverlay } from '@/components/WorkspaceInitOverlay';
 import Image from 'next/image';
-import { BRAND_ALT, LOGO_HEADER, LOGO_HEADER_HEIGHT, LOGO_HEADER_WIDTH, PRODUCT_NAME } from '@/lib/brand';
+import {
+  BRAND_ALT,
+  LOGO_HEADER,
+  LOGO_HEADER_HEIGHT,
+  LOGO_HEADER_WIDTH,
+  PRODUCT_NAME,
+  PRODUCT_TAGLINE_CLASS,
+} from '@/lib/brand';
 import { User, Lock, Eye, EyeOff, Scan, Lock as LockIcon, Wifi, Shield } from 'lucide-react';
 
 export default function LoginPage() {
@@ -90,9 +97,7 @@ export default function LoginPage() {
                 height={LOGO_HEADER_HEIGHT}
                 className="h-[48px] w-auto object-contain"
               />
-              <div className="mt-3 font-sans text-[11px] font-semibold tracking-[1px] text-[#9b7a45]">
-                {PRODUCT_NAME}
-              </div>
+              <div className={PRODUCT_TAGLINE_CLASS}>{PRODUCT_NAME}</div>
             </div>
           </div>
           <Link href="/signup" className="text-[12px] text-mist hover:text-charcoal">
