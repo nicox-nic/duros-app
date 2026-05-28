@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply bg-ivory text-charcoal antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-inter, 'Inter'), system-ui, sans-serif;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    z-index: -2;
+    pointer-events: none;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(201, 169, 120, 0.10), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(107, 122, 140, 0.07), transparent 60%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .font-display {
+    font-family: var(--font-fraunces, 'Fraunces'), 'Times New Roman', serif;
+    font-variation-settings: "opsz" 144;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* Hide scrollbar utility */
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Glass effect */
+  .glass {
+    background: rgba(255, 253, 248, 0.72);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+  }
+  .glass-strong {
+    background: rgba(255, 253, 248, 0.92);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+  }
+}

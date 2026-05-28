@@ -1,0 +1,152 @@
+import type { Ticket } from '../types';
+
+// The leak ticket is the centerpiece of the demo flow.
+// Resident files it → appears in staff queue → staff assigns → resident sees update.
+export const mockTickets: Ticket[] = [
+  {
+    id: 'tkt-001',
+    reference: 'R-2024-0514-001',
+    propertyId: 'prop-001',
+    type: 'repair',
+    title: 'Water Leak in Bathroom',
+    description:
+      'Water leaking from the pipe under the sink. The cabinet floor is wet. Please check and fix as soon as possible.',
+    status: 'urgent',
+    priority: 'urgent',
+    resident: {
+      id: 'user-john',
+      name: 'John Doe',
+      unitNumber: '1203',
+      tower: 'Tower 1',
+    },
+    department: 'Maintenance',
+    assignedTo: {
+      id: 'user-mike',
+      name: 'Mike Bautista',
+    },
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 1.5).toISOString(),
+    slaDeadline: new Date(Date.now() + 1000 * 60 * 25).toISOString(), // 25 min from now
+    photos: [
+      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80',
+      'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=400&q=80',
+      'https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=400&q=80',
+    ],
+    updates: [
+      {
+        id: 'upd-001',
+        timestamp: new Date(Date.now() - 1000 * 60 * 60 * 1.5).toISOString(),
+        type: 'status_change',
+        authorId: 'user-john',
+        authorName: 'John Doe',
+        content: 'Ticket created by resident.',
+        status: 'pending',
+      },
+      {
+        id: 'upd-002',
+        timestamp: new Date(Date.now() - 1000 * 60 * 60).toISOString(),
+        type: 'assigned',
+        authorId: 'user-alex',
+        authorName: 'Alex Mendoza',
+        content: 'Assigned to Mike Bautista (Maintenance).',
+      },
+      {
+        id: 'upd-003',
+        timestamp: new Date(Date.now() - 1000 * 60 * 45).toISOString(),
+        type: 'status_change',
+        authorId: 'user-mike',
+        authorName: 'Mike Bautista',
+        content: 'Work in progress on-site.',
+        status: 'in_progress',
+      },
+    ],
+  },
+  {
+    id: 'tkt-002',
+    reference: 'R-2024-0514-002',
+    propertyId: 'prop-001',
+    type: 'repair',
+    title: 'AC Not Cooling Properly',
+    description:
+      'Aircon unit in living room not cooling. Has been running for 3 hours but room is still warm.',
+    status: 'in_progress',
+    priority: 'medium',
+    resident: {
+      id: 'user-maria',
+      name: 'Maria Santos',
+      unitNumber: '1805',
+      tower: 'Tower 2',
+    },
+    department: 'Engineering',
+    assignedTo: { id: 'user-ramon', name: 'Ramon Cruz' },
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 3).toISOString(),
+    slaDeadline: new Date(Date.now() + 1000 * 60 * 60 * 4).toISOString(),
+    photos: [
+      'https://images.unsplash.com/photo-1631545308456-c4b8be1b6e10?auto=format&fit=crop&w=400&q=80',
+    ],
+    updates: [
+      {
+        id: 'upd-101',
+        timestamp: new Date(Date.now() - 1000 * 60 * 60 * 3).toISOString(),
+        type: 'status_change',
+        authorId: 'user-maria',
+        authorName: 'Maria Santos',
+        content: 'Ticket created.',
+        status: 'pending',
+      },
+    ],
+  },
+  {
+    id: 'tkt-003',
+    reference: 'R-2024-0513-007',
+    propertyId: 'prop-001',
+    type: 'repair',
+    title: 'Ceiling Paint Peeling',
+    description: 'Ceiling paint in master bedroom is peeling. Needs repainting.',
+    status: 'pending',
+    priority: 'low',
+    resident: {
+      id: 'user-robert',
+      name: 'Robert Lee',
+      unitNumber: '901',
+      tower: 'Tower 1',
+    },
+    department: 'Maintenance',
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 18).toISOString(),
+    photos: [
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80',
+    ],
+    updates: [],
+  },
+  {
+    id: 'tkt-004',
+    reference: 'R-2024-0513-003',
+    propertyId: 'prop-001',
+    type: 'repair',
+    title: 'Elevator Button Stuck',
+    description: 'Tower 3 lobby elevator: 5th floor button stuck and not responding.',
+    status: 'completed',
+    priority: 'high',
+    resident: {
+      id: 'user-alex',
+      name: 'Building Staff',
+      unitNumber: 'Lobby',
+      tower: 'Tower 3',
+    },
+    department: 'Engineering',
+    assignedTo: { id: 'user-ramon', name: 'Ramon Cruz' },
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 30).toISOString(),
+    completedAt: new Date(Date.now() - 1000 * 60 * 60 * 28).toISOString(),
+    photos: [],
+    updates: [
+      {
+        id: 'upd-301',
+        timestamp: new Date(Date.now() - 1000 * 60 * 60 * 28).toISOString(),
+        type: 'status_change',
+        authorId: 'user-ramon',
+        authorName: 'Ramon Cruz',
+        content: 'Button replaced. Tested and working.',
+        status: 'completed',
+      },
+    ],
+  },
+];

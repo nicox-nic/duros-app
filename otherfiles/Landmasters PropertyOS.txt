@@ -1,0 +1,302 @@
+Create a premium Apple-inspired property management web and mobile app called “Landmasters PropertyOS.”
+
+The app is an AI-powered property management system for condominium, subdivision, mixed-use, and commercial properties. It must directly communicate with a separate resident/homeowner/tenant app called Home AI, where residents can submit repair tickets, complaints, billing questions, work permits, gate passes, and special permit requests.
+
+Design style:
+Apple-like, premium, clean, professional, modern property management aesthetic. Use soft ivory backgrounds, deep charcoal typography, subtle champagne beige, soft blue-gray accents, glassmorphism cards, rounded corners, elegant spacing, soft shadows, and a low-opacity background image of a premium condominium lobby, property manager, engineering team, or modern residential building. The background image must be subtle and professional, around 5–12% opacity. The design should feel like Apple Business Manager meets high-end real estate operations.
+
+Create the following screens:
+
+1. Splash Screen
+- Landmasters PropertyOS logo
+- Background: low-opacity premium property management or condominium lobby image
+- Tagline: “Smarter Property Management. Better Resident Living.”
+- Elegant loading animation
+
+2. Login Screen
+- Username
+- Password
+- Forgot password
+- Secure login button
+- Optional biometric login design
+- Clean Apple-style form layout
+
+3. Create Account Screen
+- Full name
+- Email
+- Mobile number
+- Requested role
+- Property name
+- Approval code
+- Employee ID or staff reference
+- Password
+- Confirm password
+- Submit for approval button
+- Status after submission: “Pending Admin Approval”
+- Security note: “Accounts must be approved by property admin before activation.”
+
+4. Main Dashboard
+Show overview cards:
+- Active workers today
+- Open repair tickets
+- Urgent requests
+- Pending approvals
+- Billing tasks
+- Work permits pending
+- Gate passes today
+- Unread resident messages
+- Complaints this week
+- Completed tasks today
+
+Add live staff status cards:
+- Maintenance
+- Accounting
+- Engineers
+- Manager
+- Security
+- Utility
+- Other staff
+
+Each staff card should show:
+- Online/offline status
+- Assigned workload
+- Current task
+- Open tickets
+- Average response time
+
+Add AI Insight panel:
+- “Tower 1 has repeated water pressure complaints from Floors 12–16.”
+- “5 urgent tickets are nearing SLA breach.”
+- “Water usage for Unit 702 is unusually high compared to previous months.”
+
+5. Ticket Management Screen
+Tabs:
+- Repair Tickets
+- Complaints
+- Suggestions
+- Incidents
+
+Ticket statuses:
+- Urgent
+- Pending
+- For Approval
+- Approved
+- Rejected
+- In Progress
+- Completed
+- Reopened
+
+Each ticket card must show:
+- Resident name
+- Unit number
+- Property
+- Request type
+- Department assigned
+- Priority level
+- Date and time submitted
+- SLA countdown
+- Attached photos
+- Chat thread
+- Internal notes
+- Assign staff button
+- Update status button
+
+6. Billing and SOA Screen
+Features:
+- Take photo of water meter
+- Take photo of electric meter
+- AI meter reading extraction
+- Previous reading
+- Current reading
+- Monthly usage
+- Water charge
+- Electric charge
+- Association dues
+- CUSA fees
+- Parking fees
+- Penalties
+- Other charges
+- Previous balance
+- Total amount due
+- Due date
+- Generate SOA button
+- Send SOA to resident Home AI app
+- Download PDF invoice
+- Payment status
+- Billing dispute thread
+
+Add AI billing alerts:
+- “Possible meter reading error detected.”
+- “Unit 1803 has unpaid dues for 2 months.”
+- “Unit 702 has 240% higher water usage than average.”
+
+7. Announcements Screen
+Allow property staff to send announcements to:
+- All residents
+- Specific tower
+- Specific floor
+- Specific unit
+- Staff only
+- Security only
+- Maintenance only
+- Commercial tenants
+
+Announcement types:
+- Water interruption
+- Power interruption
+- Elevator maintenance
+- Fire drill
+- Pest control
+- Garbage collection
+- Community event
+- Payment reminder
+- Security advisory
+- Facility schedule
+
+Include:
+- Announcement title
+- Body
+- Audience selection
+- Schedule post
+- Send now
+- Push notification toggle
+- Send to Home AI resident app
+
+8. Work Permits Screen
+Fields:
+- Unit number
+- Resident name
+- Work description
+- Contractor name
+- Date and time
+- Worker list
+- ID attachments
+- Scope of work
+- Supporting documents
+- Engineering approval
+- Manager approval
+- Security clearance
+
+Statuses:
+- Pending
+- For Engineering Review
+- For Manager Approval
+- Approved
+- Rejected
+- Expired
+- Completed
+
+9. Gate Pass Screen
+Features:
+- Visitor entry
+- Delivery
+- Contractor entry
+- Move-in
+- Move-out
+- Furniture delivery
+- Vehicle access
+- Guest parking
+- QR code scanner
+- Vehicle plate number
+- Visitor ID
+- Host unit
+- Time in/time out
+- Security approval
+- Expiry time
+
+10. Special Permits Screen
+Permit types:
+- Amenity reservation
+- Function room use
+- Pool party
+- Moving large items
+- Pet registration
+- Temporary parking
+- Overnight guest
+- Commercial activity
+- Filming/photoshoot request
+- Drone use
+- Extended work hours
+
+11. Inbox Screen
+Every user must have an inbox for:
+- Resident messages
+- Internal staff messages
+- Ticket comments
+- Billing inquiries
+- Permit messages
+- Announcements
+- Urgent alerts
+- Manager instructions
+
+Add notification behavior:
+- Audio beep when a new ticket, request, message, urgent alert, billing dispute, or permit approval arrives
+- Notification badge
+- Message preview
+- Search messages
+- Filter by department
+
+12. Staff and Roles Screen
+Roles:
+- Super Admin
+- Property Manager
+- Maintenance
+- Accounting
+- Engineers
+- Security
+- Utility
+- Other Staff
+
+Features:
+- Add staff
+- Approve account
+- Assign property
+- Assign department
+- Set permissions
+- View workload
+- View performance
+- Online/offline status
+
+13. AI Reports Screen
+Reports:
+- Daily operations report
+- Weekly property health report
+- Monthly complaint summary
+- Maintenance performance report
+- Billing collection summary
+- Security incident summary
+- Resident satisfaction report
+- Recurring issue report
+
+AI should summarize:
+- Most common complaints
+- Most delayed tickets
+- Department workload
+- High-risk building issues
+- Unpaid accounts
+- Staff performance
+- Resident sentiment
+
+Navigation:
+Use a floating bottom menu with:
+- Dashboard
+- Tickets
+- Permits
+- Billing
+- Inbox
+
+Add a central floating “+” button that opens quick actions:
+- New repair ticket
+- New announcement
+- New work permit
+- New gate pass
+- New SOA
+- New staff task
+- New incident report
+- New message
+
+Important integration:
+The app must show that it communicates directly with the Home AI resident app. Resident requests from Home AI appear in PropertyOS. PropertyOS updates, SOA invoices, announcements, approvals, rejections, and messages are sent back to Home AI in real time.
+
+Overall feeling:
+Premium, secure, calm, highly organized, enterprise-ready, Apple-level polish, professional property management command center.
