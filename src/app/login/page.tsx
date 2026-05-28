@@ -1,13 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useAppStore } from '@/lib/store';
 import { Button } from '@/components/ui';
 import { FieldLabel, TextInput } from '@/components/Form';
-import { LoginSplash } from '@/components/LoginSplash';
+import { LoginSplash, SPLASH_SEEN_SESSION_KEY } from '@/components/LoginSplash';
 import { WorkspaceInitOverlay } from '@/components/WorkspaceInitOverlay';
 import Image from 'next/image';
 import { BRAND_ALT, LOGO_HEADER, LOGO_HEADER_HEIGHT, LOGO_HEADER_WIDTH, PRODUCT_NAME } from '@/lib/brand';
@@ -19,6 +19,12 @@ export default function LoginPage() {
 
   const [splashDone, setSplashDone] = useState(false);
   const [username, setUsername] = useState('');
+
+  useEffect(() => {
+    if (sessionStorage.getItem(SPLASH_SEEN_SESSION_KEY) === '1') {
+      setSplashDone(true);
+    }
+  }, []);
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [submitting, setSubmitting] = useState(false);

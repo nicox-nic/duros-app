@@ -24,6 +24,9 @@ const PROGRESS_DURATION_MS = DISMISS_HEADLINE1_AT - HEADLINE1_AT;
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
+/** Set when `/` splash finishes so `/login` does not replay it */
+export const SPLASH_SEEN_SESSION_KEY = 'duros-splash-seen';
+
 /** Splash logo width (280px base × 0.8) */
 const LOGO_WIDTH = 224;
 
